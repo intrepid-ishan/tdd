@@ -36,4 +36,12 @@ public class MinMonotonicStackTest {
         int topVal = stack.top();
         Assertions.assertEquals(num, topVal);
     }
+
+    @Test
+    void testFirstPushAndPop(){
+        int num = 5;
+        stack.push(num);
+        int poppedVal = stack.pop();
+        Assertions.assertEquals(num, poppedVal);
+    }
 }
