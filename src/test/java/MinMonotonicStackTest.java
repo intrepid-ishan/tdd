@@ -13,7 +13,7 @@ public class MinMonotonicStackTest {
     }
 
     @Test
-    void emptyTop(){
+    void testEmptyTop(){
         Assertions.assertThrows(EmptyStackException.class, stack::top);
     }
 }
