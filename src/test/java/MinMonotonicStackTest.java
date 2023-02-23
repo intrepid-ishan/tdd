@@ -54,4 +54,17 @@ public class MinMonotonicStackTest {
         int poppedVal = stack.pop(); // Second pop
         Assertions.assertEquals(num1, poppedVal);
     }
+
+    @Test
+    void testMultiplePushRandomOrderAndPop(){
+        stack.push(3);
+        stack.push(2);
+        stack.push(4);
+        stack.push(1);
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        int lastPoppedVal = stack.pop();
+        Assertions.assertEquals(4, lastPoppedVal);
+    }
 }
