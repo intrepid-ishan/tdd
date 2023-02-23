@@ -1,6 +1,10 @@
 import java.util.EmptyStackException;
 
 public class MinMonotonicStack {
+    public int push(int element) {
+        return element;
+    }
+
     public int top() {
         throw new EmptyStackException();
     }
