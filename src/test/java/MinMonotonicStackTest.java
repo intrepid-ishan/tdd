@@ -44,4 +44,14 @@ public class MinMonotonicStackTest {
         int poppedVal = stack.pop();
         Assertions.assertEquals(num, poppedVal);
     }
+
+    @Test
+    void testDoubleDescendingPushAndPop(){
+        int num1 = 2, num2 = 1;
+        stack.push(num1);
+        stack.push(num2);
+        stack.pop(); // First pop
+        int poppedVal = stack.pop(); // Second pop
+        Assertions.assertEquals(num1, poppedVal);
+    }
 }
