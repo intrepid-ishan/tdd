@@ -16,4 +16,9 @@ public class MinMonotonicStackTest {
     void testEmptyTop(){
         Assertions.assertThrows(EmptyStackException.class, stack::top);
     }
+
+    @Test
+    void testEmptyPop(){
+        Assertions.assertThrows(EmptyStackException.class, stack::pop);
+    }
 }
