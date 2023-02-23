@@ -24,6 +24,10 @@ public class MinMonotonicStack {
     }
 
     public int pop() {
-        throw new EmptyStackException();
+        if(stack.isEmpty()){
+            throw new EmptyStackException();
+        }
+
+        return top();
     }
 }
