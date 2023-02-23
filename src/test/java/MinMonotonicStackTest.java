@@ -21,4 +21,11 @@ public class MinMonotonicStackTest {
     void testEmptyPop(){
         Assertions.assertThrows(EmptyStackException.class, stack::pop);
     }
+
+    @Test
+    void testReturnValueOfPush(){
+        int num = 5;
+        int returnVal = stack.push(num);
+        Assertions.assertEquals(num, returnVal);
+    }
 }
