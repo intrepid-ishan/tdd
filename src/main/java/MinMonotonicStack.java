@@ -10,7 +10,26 @@ public class MinMonotonicStack {
     }
 
     public int push(int element) {
-        stack.add(element);
+        int size = stack.size();
+
+        if(size == 0 || element <= stack.get(size - 1)){
+            stack.add(element);
+        } else{
+            stack.add(size, element);
+
+            for(int i = size; i > 0; i--){
+                int currElement = stack.get(i);
+                int prevElement = stack.get(i-1);
+
+                if(currElement > prevElement){
+                    int temp = prevElement;
+                    stack.set(i-1,currElement);
+                    stack.set(i,temp);
+                } else{
+                    break;
+                }
+            }
+        }
 
         return element;
     }
