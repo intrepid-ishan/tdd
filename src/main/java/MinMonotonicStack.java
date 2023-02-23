@@ -28,6 +28,6 @@ public class MinMonotonicStack {
             throw new EmptyStackException();
         }
 
-        return top();
+        return stack.remove(stack.size() - 1);
     }
 }
