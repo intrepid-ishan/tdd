@@ -2,18 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostOrderTraversal {
-    public static List<Integer> traverse(Node root, boolean recursive) {
+    public static List<Integer> traverseRecursively(Node node) {
         List<Integer> result = new ArrayList<>();
-        recursiveTraversal(root, result);
+        traverseRecursivelyHelper(node, result);
         return result;
     }
 
-    private static void recursiveTraversal(Node node, List<Integer> result) {
+    private static void traverseRecursivelyHelper(Node node, List<Integer> result) {
         if(node == null) {
             return;
         }
-        recursiveTraversal(node.left, result);
-        recursiveTraversal(node.right, result);
+        traverseRecursivelyHelper(node.left, result);
+        traverseRecursivelyHelper(node.right, result);
         result.add(node.val);
     }
 }

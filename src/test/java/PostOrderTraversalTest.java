@@ -11,7 +11,7 @@ public class PostOrderTraversalTest {
     public void testRecursiveEmptyTree() {
         Node root = null;
 
-        List<Integer> result = PostOrderTraversal.traverse(root, true);
+        List<Integer> result = PostOrderTraversal.traverseRecursively(root);
 
         List<Integer> expected = new ArrayList<>();
         assertEquals(expected, result);
@@ -21,7 +21,7 @@ public class PostOrderTraversalTest {
     public void testRecursiveSingleNodeTree() {
         Node root = new Node(5);
 
-        List<Integer> result = PostOrderTraversal.traverse(root, true);
+        List<Integer> result = PostOrderTraversal.traverseRecursively(root);
 
         List<Integer> expected = Arrays.asList(5);
         assertEquals(expected, result);
@@ -33,7 +33,7 @@ public class PostOrderTraversalTest {
         root.left = new Node(6);
         root.left.left = new Node(7);
 
-        List<Integer> result = PostOrderTraversal.traverse(root, true);
+        List<Integer> result = PostOrderTraversal.traverseRecursively(root);
 
         List<Integer> expected = Arrays.asList(7, 6, 5);
         assertEquals(expected, result);
@@ -49,7 +49,7 @@ public class PostOrderTraversalTest {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        List<Integer> result = PostOrderTraversal.traverse(root, true);
+        List<Integer> result = PostOrderTraversal.traverseRecursively(root);
 
         List<Integer> expected = Arrays.asList(4, 5, 2, 6, 7, 3, 1);
         assertEquals(expected, result);
@@ -59,7 +59,7 @@ public class PostOrderTraversalTest {
     public void testIterativeEmptyTree() {
         Node root = null;
 
-        List<Integer> result = PostOrderTraversal.traverse(root, false);
+        List<Integer> result = PostOrderTraversal.traverseIteratively(root);
 
         List<Integer> expected = new ArrayList<>();
         assertEquals(expected, result);
