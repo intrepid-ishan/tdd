@@ -16,4 +16,9 @@ public class PostOrderTraversal {
         traverseRecursivelyHelper(node.right, result);
         result.add(node.val);
     }
+
+    public static List<Integer> traverseIteratively(Node root) {
+        List<Integer> result = new ArrayList<>();
+        return result;
+    }
 }
