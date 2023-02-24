@@ -13,6 +13,7 @@ public class PostOrderTraversal {
             return;
         }
         recursiveTraversal(node.left, result);
+        recursiveTraversal(node.right, result);
         result.add(node.val);
     }
 }
