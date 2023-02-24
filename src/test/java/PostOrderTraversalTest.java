@@ -54,4 +54,14 @@ public class PostOrderTraversalTest {
         List<Integer> expected = Arrays.asList(4, 5, 2, 6, 7, 3, 1);
         assertEquals(expected, result);
     }
+
+    @Test
+    public void testIterativeEmptyTree() {
+        Node root = null;
+
+        List<Integer> result = PostOrderTraversal.traverse(root, false);
+
+        List<Integer> expected = new ArrayList<>();
+        assertEquals(expected, result);
+    }
 }
