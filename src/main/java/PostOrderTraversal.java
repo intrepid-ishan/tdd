@@ -19,6 +19,10 @@ public class PostOrderTraversal {
 
     public static List<Integer> traverseIteratively(Node root) {
         List<Integer> result = new ArrayList<>();
+        if(root == null) {
+            return result;
+        }
+        result.add(root.val);
         return result;
     }
 }
