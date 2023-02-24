@@ -64,4 +64,14 @@ public class PostOrderTraversalTest {
         List<Integer> expected = new ArrayList<>();
         assertEquals(expected, result);
     }
+
+    @Test
+    public void testIterativeSingleNodeTree() {
+        Node root = new Node(5);
+
+        List<Integer> result = PostOrderTraversal.traverseIteratively(root);
+
+        List<Integer> expected = Arrays.asList(5);
+        assertEquals(expected, result);
+    }
 }
