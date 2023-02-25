@@ -8,29 +8,29 @@ public class MinMonotonicStackTest {
     private MinMonotonicStack stack;
 
     @BeforeEach
-    void setupMinMonotonicStack() {
+    public void setupMinMonotonicStack() {
         stack = new MinMonotonicStack();
     }
 
     @Test
-    void testEmptyTop(){
+    public void testEmptyTop(){
         Assertions.assertThrows(EmptyStackException.class, stack::top);
     }
 
     @Test
-    void testEmptyPop(){
+    public void testEmptyPop(){
         Assertions.assertThrows(EmptyStackException.class, stack::pop);
     }
 
     @Test
-    void testReturnValueOfPush(){
+    public void testReturnValueOfPush(){
         int num = 5;
         int returnVal = stack.push(num);
         Assertions.assertEquals(num, returnVal);
     }
 
     @Test
-    void testFirstPushAndTop(){
+    public void testFirstPushAndTop(){
         int num = 5;
         stack.push(num);
         int topVal = stack.top();
@@ -38,7 +38,7 @@ public class MinMonotonicStackTest {
     }
 
     @Test
-    void testFirstPushAndPop(){
+    public void testFirstPushAndPop(){
         int num = 5;
         stack.push(num);
         int poppedVal = stack.pop();
@@ -46,7 +46,7 @@ public class MinMonotonicStackTest {
     }
 
     @Test
-    void testDoubleDescendingPushAndPop(){
+    public void testDoubleDescendingPushAndPop(){
         int num1 = 2, num2 = 1;
         stack.push(num1);
         stack.push(num2);
@@ -56,7 +56,7 @@ public class MinMonotonicStackTest {
     }
 
     @Test
-    void testMultiplePushRandomOrderAndPop(){
+    public void testMultiplePushRandomOrderAndPop(){
         stack.push(3);
         stack.push(2);
         stack.push(4);
