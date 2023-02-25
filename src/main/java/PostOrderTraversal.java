@@ -27,15 +27,29 @@ public class PostOrderTraversal {
 
         Node current = root;
 
-        // Keep going to the left as much as possible
-        while(current != null) {
-            stack.push(current);
-            current = current.left;
-        }
+        // Store previous node that was visited. This will be used later to determine if the right
+        // subtree has already been visited.
+        Node previousVisited = null;
 
-        // Now we have iterated the complete subtree. Keep popping the elements from the stack and visit each.
-        while(!stack.isEmpty()) {
-            result.add(stack.pop().val);
+        while(current != null || !stack.isEmpty()) {
+            // Keep going to the left as much as possible
+            while(current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+
+            // Store the last left node, then check if we can go right from there
+            Node node = stack.peekFirst();
+
+            // If the right subtree is present but not yet visited
+            if(node.right != null && previousVisited != node.right) {
+                current = node.right;
+            } else {
+                // The right subtree has already been visited, so we visit the current node now
+                // and remove it from the stack (as the full subtree of this node has been visited)
+                result.add(node.val);
+                previousVisited = stack.pop();
+            }
         }
 
         return result;
